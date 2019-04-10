@@ -4,7 +4,7 @@ const d3 = require('d3')
 loadFile()
 
 function loadFile(){
-	fs.readFile("filename.json", {encoding: 'utf-8'}, function(err,data){
+	fs.readFile("/output/filename.json", {encoding: 'utf-8'}, function(err,data){
 	    if (!err) {
 	        //console.log('received data: ' + data);
 	        transformData(data,30, true, false, true, true)
@@ -99,7 +99,7 @@ function transformData(data, limit, noR, noBoard, reciprocal, omniLikes){
 
 function writeDataFile(data)
 {
-	fs.writeFile('./output/filename.json', JSON.stringify(data), 'utf8', function (err) {
+	fs.writeFile('/output/filename.json', JSON.stringify(data), 'utf8', function (err) {
 	    if (err) {
 	        return console.log(err)
 	    } else {

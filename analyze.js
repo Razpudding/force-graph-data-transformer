@@ -4,7 +4,7 @@ const d3 = require('d3')
 loadFile()
 
 function loadFile(){
-	fs.readFile("wiewel2.csv", {encoding: 'utf-8'}, function(err,data){
+	fs.readFile("/input/fileName.csv", {encoding: 'utf-8'}, function(err,data){
 	    if (!err) {
 	        //console.log('received data: ' + data);
 	        parseData(data)
@@ -20,17 +20,12 @@ function parseData(source){
 	console.log("#Entries in data: ", data.length)
 	console.log(data[0])
 	const selection = data//.slice(0,10)
-	//selection.forEach(datum => console.log(Number(datum.total_income)))
-	//const set = new Set(selection.map(hh => hh['Country']))
-  	//console.log(Array.from(set))
 	
-	//writeDataFile(selection)
 	const anonymizedIndex = {"Ik heb geen specifieke voorkeur voor woongroepsgenoten": 0}
 	data.forEach(item => {
 		anonymizedIndex[item.id] = Object.keys(anonymizedIndex).length
 	})
 	console.log(anonymizedIndex)
-
 
 	function anonomyze(name){
 		const id = anonymizedIndex[name.trim()]
@@ -50,7 +45,7 @@ function parseData(source){
 
 function writeDataFile(data)
 {
-	fs.writeFile('wiewelAnonymous.json', JSON.stringify(data), 'utf8', function (err) {
+	fs.writeFile('/output/fileName.json', JSON.stringify(data), 'utf8', function (err) {
 	    if (err) {
 	        return console.log(err)
 	    } else {
