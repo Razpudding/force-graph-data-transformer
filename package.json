@@ -1,0 +1,15 @@
+{
+  "name": "transform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "transform.js",
+  "dependencies": {
+    "d3": "^5.7.0",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Laurens",
+  "license": "ISC"
+}
