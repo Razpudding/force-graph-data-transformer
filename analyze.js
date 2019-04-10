@@ -1,6 +1,4 @@
 const fs = require('fs')
-const path = require('path')
-const fetch = require("node-fetch")
 const d3 = require('d3')
 
 loadFile()
